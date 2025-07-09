@@ -4,6 +4,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AllPlaces from './screens/AllPlaces';
 import AddPlace from './screens/AddPlace';
+import IconButton from './componets/ui/IconButton';
+import { Colors } from './constants/colors';
+import { Ionicons } from "@expo/vector-icons";
+
+
 
 const Stack = createNativeStackNavigator();
 
@@ -12,9 +17,36 @@ export default function App() {
     <>
       <StatusBar style='dark' />
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name='AllPlaces' component={AllPlaces} />
-          <Stack.Screen name='AddPlace' component={AddPlace} />
+        <Stack.Navigator
+          screenOptions={{
+            headerStyle: { backgroundColor: 'tomato' },
+            headerTintColor: 'white',
+            contentStyle: { backgroundColor: Colors.gray700 },
+          }}
+        >
+          <Stack.Screen
+            name="AllPlaces"
+            component={AllPlaces}
+            options={({ navigation }) => ({
+              title: 'Your Favourite Places',
+              headerRight: ({ tintColor }) => {
+                console.log("Header right rendered with tintColor:", tintColor); 
+                return (
+                  <IconButton
+                    icon="add"
+                    size={24}
+                    color={tintColor ?? 'blue'}
+                    onPress={() => navigation.navigate('AddPlace')}
+                  />
+                );
+              },
+            })}
+          />
+
+
+          <Stack.Screen name='AddPlace' component={AddPlace} options={{
+            title: 'Add a new Place'
+          }} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
