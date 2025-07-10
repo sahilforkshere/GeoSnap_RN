@@ -11,7 +11,7 @@ import {
 import * as ImagePicker from 'expo-image-picker';
 import OutlinedButton from '../ui/OutlinedButton';
 
-function ImagePickerComponent() {
+function ImagePickerComponent({onImageTaken}) {
   const [pickedImage, setPickedImage] = useState(null);
 
 
@@ -42,7 +42,9 @@ function ImagePickerComponent() {
 
     if (!result.canceled) {
       setPickedImage(result.assets[0].uri);
+      onImageTaken(result.assets[0].uri)
     }
+    
   }
 
 
@@ -55,6 +57,7 @@ function ImagePickerComponent() {
 
     if (!result.canceled) {
       setPickedImage(result.assets[0].uri);
+      onImageTaken(result.assets[0].uri)
     }
   }
 

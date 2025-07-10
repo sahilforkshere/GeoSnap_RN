@@ -22,19 +22,18 @@ function Map({ navigation }) {
     setSelectedLocation({ lat: lat, lng: lng })
   }
 
-  const savePickedLocation = useCallback(() => {
-    if (!selectedLocation) {
-      Alert.alert(
-        'No location picked',
-        'You have to pick a location first '
-      );
-      return;
-    }
-    navigation.navigate('AddPlace', {
-      pickedLat: selectLocationHandler.lat,
-      pickedLng: selectedLocation.lng
-    });
-  }, [navigation, selectedLocation])
+ 
+const savePickedLocation = useCallback(() => {
+  if (!selectedLocation) {
+    Alert.alert('No location picked', 'You have to pick a location first');
+    return;
+  }
+  navigation.navigate('AddPlace', {
+    pickedLat: selectedLocation.lat,
+    pickedLng: selectedLocation.lng,
+  });
+}, [navigation, selectedLocation]);
+
 
   useLayoutEffect(() => {
     navigation.setOptions({
