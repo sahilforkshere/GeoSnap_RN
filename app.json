@@ -3,6 +3,15 @@
     "name": "GeoSnap_RN",
     "slug": "GeoSnap_RN",
     "version": "1.0.0",
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "The app accesses to your camera to take photos"
+        }
+      ]
+    ]
+  ,
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",

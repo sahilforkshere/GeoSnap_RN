@@ -5,10 +5,10 @@ import { Colors } from "../constants/colors"
 import { View } from "react-native"
 
 function AllPlaces() {
-    return  <View
+    return  <SafeAreaView
      style={styles.root}>
     <PlacesList/>
-  </View>
+  </SafeAreaView>
 
 }
 
@@ -17,6 +17,6 @@ const styles = StyleSheet.create({
   root: {
     flex: 1,
     backgroundColor: Colors.gray700,
-    paddingTop: 10, // temp to check header visibility
+    paddingTop: 10, 
   },
 });
