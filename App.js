@@ -7,6 +7,7 @@ import AddPlace from './screens/AddPlace';
 import IconButton from './componets/ui/IconButton';
 import { Colors } from './constants/colors';
 import { Ionicons } from "@expo/vector-icons";
+import Map from './screens/Map';
 
 
 
@@ -47,6 +48,8 @@ export default function App() {
           <Stack.Screen name='AddPlace' component={AddPlace} options={{
             title: 'Add a new Place'
           }} />
+
+          <Stack.Screen name='Map' component={Map} />
         </Stack.Navigator>
       </NavigationContainer>
     </>

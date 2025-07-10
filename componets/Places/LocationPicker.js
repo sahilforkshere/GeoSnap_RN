@@ -4,8 +4,10 @@ import OutlinedButton from '../ui/OutlinedButton';
 import { Colors } from '../../constants/colors';
 import { getCurrentPositionAsync, useForegroundPermissions, PermissionStatus } from 'expo-location';
 import getMapPreview from '../../util/location';
+import { useNavigation } from '@react-navigation/native';
 
 function LocationPicker() {
+    const navigation=useNavigation();
   const [pickedLocation, setPickedLocation] = useState(null);
   const [locationPermissionInformation, requestPermission] = useForegroundPermissions();
 
@@ -46,7 +48,7 @@ function LocationPicker() {
   }
 
   function pickOnMapHandler() {
-    // implement later
+     navigation.navigate('Map')
   }
 
   return (
@@ -79,6 +81,8 @@ const styles = StyleSheet.create({
   mapPreviewImage: {
     width: '100%',
     height: '100%',
+    borderRadius:4,
+    overflow:'hidden'
   },
   actions: {
     flexDirection: 'row',
