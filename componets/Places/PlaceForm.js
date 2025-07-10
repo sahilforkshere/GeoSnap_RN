@@ -27,9 +27,7 @@ function PlaceForm({onPressMap}) {
     },[]);
 
     function savePlaceHandler(){
-     console.log(enteredTitle);
-     console.log(selectImage);
-     console.log(pickedLocation);
+     
      
      
      
