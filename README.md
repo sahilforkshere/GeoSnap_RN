@@ -26,7 +26,7 @@ GeoSnap allows users to:
 
 | 🏠 Home | ➕ Add Place | 🗺️ Map Picker |
 |--------|-------------|---------------|
-| ![Home](./assets/screenshots/home.png) | ![Add](./assets/screenshots/add.png) | ![Map](./assets/screenshots/map.png) |
+| ![Home](./assets/screenshots/home.jpg) | ![Add](./assets/screenshots/selectplace.png) | ![Map](./assets/screenshots/map.jng) |
 
 ---
 
