@@ -9,6 +9,7 @@ import {
   Platform,
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
+import OutlinedButton from '../ui/OutlinedButton';
 
 function ImagePickerComponent() {
   const [pickedImage, setPickedImage] = useState(null);
@@ -79,7 +80,7 @@ function ImagePickerComponent() {
           <Text>No image picked yet.</Text>
         )}
       </View>
-      <Button title="Take Image" onPress={handleImageSelection} />
+      <OutlinedButton icon="camera" onPress={handleImageSelection} >Take  Iamge</OutlinedButton>
     </View>
   );
 }
