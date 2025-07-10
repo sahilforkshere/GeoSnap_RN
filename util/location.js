@@ -9,8 +9,8 @@ const api_key = process.env.EXPO_PUBLIC_GOOGLE_API_KEY;
     `center=${lat},${lng}`,
     `zoom=14`,
     `size=400x400`,
-    `maptype=roadmap`,                                     // or 'terrain', 'satellite', etc.
-    `markers=color:red%7Clabel:A%7C${lat},${lng}`,        // red pin labeled A
+    `maptype=roadmap`,                                     
+    `markers=color:red%7Clabel:A%7C${lat},${lng}`,     
     `key=${api_key}`
   ];
   return `${base}?${params.join('&')}`;
